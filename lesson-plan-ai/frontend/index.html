@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson Plan AI Generator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📚 Lesson Plan AI Generator</h1>
+            <p>Create professional lesson plans with the power of AI</p>
+        </header>
+
+        <div class="form-section">
+            <form id="lessonPlanForm">
+                <div class="form-grid">
+                    <!-- School Information -->
+                    <div class="form-group">
+                        <label for="schoolName">School Name *</label>
+                        <input type="text" id="schoolName" name="schoolName" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="teacherName">Teacher Name *</label>
+                        <input type="text" id="teacherName" name="teacherName" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="term">Term</label>
+                        <input type="text" id="term" name="term" placeholder="e.g., Fall 2024">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="date">Date</label>
+                        <input type="date" id="date" name="date">
+                    </div>
+
+                    <!-- Subject Information -->
+                    <div class="form-group">
+                        <label for="subject">Subject *</label>
+                        <input type="text" id="subject" name="subject" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="className">Class Name *</label>
+                        <input type="text" id="className" name="className" required placeholder="e.g., Grade 5A">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="unitNo">Unit No</label>
+                        <input type="text" id="unitNo" name="unitNo" placeholder="e.g., 3">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="lessonNo">Lesson No</label>
+                        <input type="text" id="lessonNo" name="lessonNo" placeholder="e.g., 2">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="duration">Duration</label>
+                        <input type="text" id="duration" name="duration" placeholder="e.g., 45 minutes">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="classSize">Class Size</label>
+                        <input type="text" id="classSize" name="classSize" placeholder="e.g., 25 students">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="specialNeeds">Special Needs</label>
+                        <input type="text" id="specialNeeds" name="specialNeeds" placeholder="e.g., 2 students with learning disabilities">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="location">Location</label>
+                        <input type="text" id="location" name="location" placeholder="e.g., Classroom 101">
+                    </div>
+
+                    <!-- Lesson Details -->
+                    <div class="form-group">
+                        <label for="unitTitle">Unit Title *</label>
+                        <input type="text" id="unitTitle" name="unitTitle" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="keyCompetence">Key Competence</label>
+                        <input type="text" id="keyCompetence" name="keyCompetence" placeholder="e.g., Problem-solving and critical thinking">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="lessonTitle">Lesson Title *</label>
+                        <input type="text" id="lessonTitle" name="lessonTitle" required>
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label for="instructionalObjective">Instructional Objective *</label>
+                        <textarea id="instructionalObjective" name="instructionalObjective" rows="3" required placeholder="Students will be able to..."></textarea>
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label for="materials">Materials</label>
+                        <textarea id="materials" name="materials" rows="2" placeholder="List all materials needed for the lesson"></textarea>
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label for="references">References</label>
+                        <textarea id="references" name="references" rows="2" placeholder="Textbook pages, online resources, etc."></textarea>
+                    </div>
+                </div>
+
+                <div class="form-actions">
+                    <button type="button" id="fillSampleData" class="btn-secondary">Fill Sample Data</button>
+                    <button type="submit" id="generateBtn" class="btn-primary">Generate Lesson Plan</button>
+                </div>
+            </form>
+        </div>
+
+        <div class="loading-section" id="loadingSection" style="display: none;">
+            <div class="loading-spinner"></div>
+            <p>Generating your lesson plan with AI...</p>
+        </div>
+
+        <div class="result-section" id="resultSection" style="display: none;">
+            <div class="result-header">
+                <h2>Generated Lesson Plan</h2>
+                <button id="downloadPdfBtn" class="btn-secondary">Download as PDF</button>
+            </div>
+            <div id="lessonPlanResult" class="lesson-plan-result">
+                <!-- Generated lesson plan HTML will be inserted here -->
+            </div>
+        </div>
+
+        <div class="error-section" id="errorSection" style="display: none;">
+            <div class="error-message">
+                <h3>⚠️ Error</h3>
+                <p id="errorText"></p>
+                <button id="retryBtn" class="btn-primary">Try Again</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
